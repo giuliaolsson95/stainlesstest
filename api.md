@@ -248,8 +248,8 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/billing/groups.ts">BillingGroup</a></code>
-- <code><a href="./src/resources/billing/groups.ts">BillingGroups</a></code>
+- <code><a href="./src/resources/billing/groups.ts">Group</a></code>
+- <code><a href="./src/resources/billing/groups.ts">Groups</a></code>
 
 # AssetAdjustments
 
