@@ -16,7 +16,7 @@ import {
   AssetAdjustments,
 } from './asset-adjustments';
 import * as GroupsAPI from './groups';
-import { BillingGroup, BillingGroups, Groups } from './groups';
+import { Group, Groups } from './groups';
 import * as InvoicesAPI from './invoices';
 import { InvoiceDownloadParams, InvoiceDownloadResponse, Invoices } from './invoices';
 import * as MinimumsAPI from './minimums';
@@ -80,7 +80,6 @@ export class Billing extends APIResource {
 Billing.Invoices = Invoices;
 Billing.Reports = Reports;
 Billing.Splits = Splits;
-Billing.Groups = Groups;
 
 export declare namespace Billing {
   export {
@@ -149,5 +148,5 @@ export declare namespace Billing {
     type SplitListParams as SplitListParams,
   };
 
-  export { Groups as Groups, type BillingGroup as BillingGroup, type BillingGroups as BillingGroups };
+  export { type Groups as Groups, type Group as Group };
 }
