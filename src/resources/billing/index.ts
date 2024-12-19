@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export { Billing } from './billing';
-export { Groups, type BillingGroup, type BillingGroups } from './groups';
 export { Invoices, type InvoiceDownloadResponse, type InvoiceDownloadParams } from './invoices';
 export {
   Reports,
@@ -41,6 +40,7 @@ export {
   type AssetAdjustmentListParams,
   type AssetAdjustmentDeleteParams,
 } from './asset-adjustments';
+export { type Groups, type Group } from './groups';
 export {
   type Minimums,
   type MinimumsMany,

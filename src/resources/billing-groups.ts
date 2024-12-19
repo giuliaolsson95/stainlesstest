@@ -4,7 +4,6 @@ import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
 import * as JobsAPI from './jobs';
-import * as GroupsAPI from './billing/groups';
 
 export class BillingGroups extends APIResource {
   /**
@@ -176,10 +175,10 @@ export class BillingGroups extends APIResource {
   }
 }
 
-export interface BillingGroupCreateResponse {
+export interface unnamed_schema_0 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroup;
+  data?: unnamed_schema_0.Data;
 
   has_next?: boolean;
 
@@ -194,10 +193,95 @@ export interface BillingGroupCreateResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupRetrieveResponse {
+export namespace unnamed_schema_0 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_1 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroup;
+  data?: unnamed_schema_1.Data;
 
   has_next?: boolean;
 
@@ -212,10 +296,95 @@ export interface BillingGroupRetrieveResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupUpdateResponse {
+export namespace unnamed_schema_1 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_2 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroup;
+  data?: unnamed_schema_2.Data;
 
   has_next?: boolean;
 
@@ -230,10 +399,95 @@ export interface BillingGroupUpdateResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupListResponse {
+export namespace unnamed_schema_2 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_3 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroups;
+  data?: Array<unnamed_schema_3.Data>;
 
   has_next?: boolean;
 
@@ -248,10 +502,95 @@ export interface BillingGroupListResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupCreateFromHouseholdsResponse {
+export namespace unnamed_schema_3 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_4 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroups;
+  data?: Array<unnamed_schema_4.Data>;
 
   has_next?: boolean;
 
@@ -266,10 +605,95 @@ export interface BillingGroupCreateFromHouseholdsResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupCreateManyResponse {
+export namespace unnamed_schema_4 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_5 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroups;
+  data?: Array<unnamed_schema_5.Data>;
 
   has_next?: boolean;
 
@@ -284,16 +708,101 @@ export interface BillingGroupCreateManyResponse {
   total_pages?: number;
 }
 
-export interface BillingGroupDeleteManyResponse {
+export namespace unnamed_schema_5 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
+}
+
+export interface unnamed_schema_6 {
   ids?: Array<number>;
 
   n?: number;
 }
 
-export interface BillingGroupFilterResponse {
+export interface unnamed_schema_7 {
   current_page?: number;
 
-  data?: GroupsAPI.BillingGroups;
+  data?: Array<unnamed_schema_7.Data>;
 
   has_next?: boolean;
 
@@ -306,6 +815,91 @@ export interface BillingGroupFilterResponse {
   total_items?: number;
 
   total_pages?: number;
+}
+
+export namespace unnamed_schema_7 {
+  export interface Data {
+    /**
+     * The unique resource ID for this Billing Group
+     */
+    id?: number;
+
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    assignments?: Data.Assignments;
+
+    /**
+     * Timestamp for when the record was created
+     */
+    created_at_utc?: string;
+
+    /**
+     * The firm ID of the managing firm for this Billing Group
+     */
+    firm_id?: number;
+
+    /**
+     * The ID of the associated household for this Billing Group
+     */
+    household_id?: number;
+
+    /**
+     * A list of billing minimum ID's associated with this Billing Group
+     */
+    minimum_ids?: Array<number>;
+
+    /**
+     * The name of this Billing Group
+     */
+    name?: string;
+
+    /**
+     * The sluggified name of this Billing Group
+     */
+    slug?: string;
+
+    /**
+     * Timestamp for when the record was updated
+     */
+    updated_at_utc?: string;
+  }
+
+  export namespace Data {
+    /**
+     * A list of AccountGroupAssignment objects associated with this Billing Group
+     */
+    export interface Assignments {
+      /**
+       * The unique resource id for this Account Group Assignment
+       */
+      id?: number;
+
+      /**
+       * The related account of this assignment
+       */
+      account_id?: number;
+
+      /**
+       * Numerical indicator for fee location behavior. Options are 0 (charged to
+       * itself), -1 (uncharged / charged to the group, where fees are distributed in
+       * prorate fashion by size), or a positive integer, which represents the ID of the
+       * account being charged.
+       */
+      fee_location?: 0 | -1;
+
+      /**
+       * The desired fee location option. Options are S (self), G (group), or A
+       * (account).
+       */
+      fee_location_option?: 'S' | 'G' | 'A';
+
+      /**
+       * The related group of this assignment
+       */
+      group_id?: number;
+    }
+  }
 }
 
 export interface BillingGroupCreateParams {
