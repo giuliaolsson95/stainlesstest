@@ -2,6 +2,22 @@
 
 export { InvestmentManagement } from './investment-management';
 export {
+  Models,
+  type Model,
+  type ModelCreateResponse,
+  type ModelRetrieveResponse,
+  type ModelUpdateResponse,
+  type ModelListResponse,
+  type ModelFilterResponse,
+  type ModelCreateParams,
+  type ModelRetrieveParams,
+  type ModelUpdateParams,
+  type ModelListParams,
+  type ModelDeleteParams,
+  type ModelDeleteManyParams,
+  type ModelFilterParams,
+} from './models';
+export {
   Strategies,
   type StrategyCreateResponse,
   type StrategyRetrieveResponse,
@@ -18,19 +34,3 @@ export {
   type StrategyDeleteManyParams,
   type StrategyFilterParams,
 } from './strategies';
-export {
-  type Models,
-  type Model,
-  type ModelCreateResponse,
-  type ModelRetrieveResponse,
-  type ModelUpdateResponse,
-  type ModelListResponse,
-  type ModelFilterResponse,
-  type ModelCreateParams,
-  type ModelRetrieveParams,
-  type ModelUpdateParams,
-  type ModelListParams,
-  type ModelDeleteParams,
-  type ModelDeleteManyParams,
-  type ModelFilterParams,
-} from './models';

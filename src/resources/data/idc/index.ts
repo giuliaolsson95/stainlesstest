@@ -2,7 +2,7 @@
 
 export { Idc } from './idc';
 export {
-  type Indexes,
+  Indexes,
   type Index,
   type IndexRetrieveResponse,
   type IndexListResponse,
