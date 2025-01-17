@@ -7,10 +7,8 @@ export {
   type AdvisorCodeCreateParams,
   type AdvisorCodeListParams,
 } from './advisor-codes';
-export { Org } from './org';
-export { RoiRequests, type RoiRequest } from './roi-requests';
 export {
-  type Firms,
+  Firms,
   type Firm,
   type FirmRetrieveResponse,
   type FirmUpdateResponse,
@@ -21,3 +19,5 @@ export {
   type FirmListParams,
   type FirmFilterParams,
 } from './firms';
+export { Org } from './org';
+export { RoiRequests, type RoiRequest } from './roi-requests';

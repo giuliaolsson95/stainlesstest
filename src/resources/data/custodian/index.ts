@@ -2,7 +2,7 @@
 
 export { Custodian } from './custodian';
 export {
-  type Securities,
+  Securities,
   type Security,
   type SecurityGetCompressedResponse,
   type SecurityManagedResponse,
