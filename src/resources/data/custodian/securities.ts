@@ -26,11 +26,7 @@ export class Securities extends APIResource {
     if (isRequestOptions(query)) {
       return this.getCompressed({}, query);
     }
-    return this._client.get('/data/custodian/securities/get-compressed', {
-      query,
-      ...options,
-      headers: { Accept: 'application/json', ...options?.headers },
-    });
+    return this._client.get('/data/custodian/securities/get-compressed', { query, ...options });
   }
 
   /**

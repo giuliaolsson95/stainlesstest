@@ -8,6 +8,16 @@ export {
   type AccountPerformanceFetchParams,
 } from './account-performance';
 export {
+  Accounts,
+  type Account,
+  type AccountListResponse,
+  type AccountFilterResponse,
+  type AccountRetrieveParams,
+  type AccountUpdateParams,
+  type AccountListParams,
+  type AccountFilterParams,
+} from './accounts';
+export {
   AdvisorCodes,
   type AdvisorCodeCreateManyResponse,
   type AdvisorCodeCreateManyParams,
@@ -28,6 +38,44 @@ export {
   type AssetAdjustmentDeleteManyParams,
   type AssetAdjustmentFilterParams,
 } from './asset-adjustments';
+export {
+  AssetClassifications,
+  type AssetClassification,
+  type AssetClassificationCreateResponse,
+  type AssetClassificationRetrieveResponse,
+  type AssetClassificationUpdateResponse,
+  type AssetClassificationListResponse,
+  type AssetClassificationCreateManyResponse,
+  type AssetClassificationFilterResponse,
+  type AssetClassificationUpdateSingleResponse,
+  type AssetClassificationCreateParams,
+  type AssetClassificationRetrieveParams,
+  type AssetClassificationUpdateParams,
+  type AssetClassificationListParams,
+  type AssetClassificationDeleteParams,
+  type AssetClassificationCreateManyParams,
+  type AssetClassificationDeleteManyParams,
+  type AssetClassificationFilterParams,
+  type AssetClassificationUpdateSingleParams,
+} from './asset-classifications';
+export {
+  Benchmarks,
+  type Benchmark,
+  type BenchmarkCreateResponse,
+  type BenchmarkRetrieveResponse,
+  type BenchmarkUpdateResponse,
+  type BenchmarkListResponse,
+  type BenchmarkCreateManyResponse,
+  type BenchmarkFilterResponse,
+  type BenchmarkCreateParams,
+  type BenchmarkRetrieveParams,
+  type BenchmarkUpdateParams,
+  type BenchmarkListParams,
+  type BenchmarkDeleteParams,
+  type BenchmarkCreateManyParams,
+  type BenchmarkDeleteManyParams,
+  type BenchmarkFilterParams,
+} from './benchmarks';
 export { Billing } from './billing/billing';
 export {
   BillingFeeStructures,
@@ -75,6 +123,7 @@ export {
   type BillingInvoiceDownloadParams,
   type BillingInvoiceFilterParams,
 } from './billing-invoices';
+export { BillingReports, type BillingReport } from './billing-reports';
 export {
   BillingSplits,
   type BillingSplitUpdateResponse,
@@ -86,6 +135,24 @@ export {
   type BillingSplitDeleteManyParams,
   type BillingSplitFilterParams,
 } from './billing-splits';
+export {
+  ClassificationTags,
+  type ClassificationTag,
+  type ClassificationTagCreateResponse,
+  type ClassificationTagRetrieveResponse,
+  type ClassificationTagUpdateResponse,
+  type ClassificationTagListResponse,
+  type ClassificationTagCreateManyResponse,
+  type ClassificationTagFilterResponse,
+  type ClassificationTagCreateParams,
+  type ClassificationTagRetrieveParams,
+  type ClassificationTagUpdateParams,
+  type ClassificationTagListParams,
+  type ClassificationTagDeleteParams,
+  type ClassificationTagCreateManyParams,
+  type ClassificationTagDeleteManyParams,
+  type ClassificationTagFilterParams,
+} from './classification-tags';
 export {
   CustodianSecurities,
   type CustodianSecurityRetrieveResponse,
@@ -129,6 +196,18 @@ export {
   type HouseholdRemapParams,
 } from './households';
 export { InvestmentManagement } from './investment-management/investment-management';
+export {
+  Jobs,
+  type Delete,
+  type JobRetrieveResponse,
+  type JobListResponse,
+  type JobClearResponse,
+  type JobFilterResponse,
+  type JobRetrieveParams,
+  type JobListParams,
+  type JobClearParams,
+  type JobFilterParams,
+} from './jobs';
 export { MarketData } from './market-data/market-data';
 export { Oauth2, type OAuth, type Oauth2ExchangeParams } from './oauth2';
 export { Org } from './org/org';
@@ -153,6 +232,18 @@ export {
   type RelatedPersonListParams,
   type RelatedPersonFilterParams,
 } from './related-persons';
+export {
+  ReportSettings,
+  type ReportSetting,
+  type ReportSettingRetrieveResponse,
+  type ReportSettingUpdateResponse,
+  type ReportSettingListResponse,
+  type ReportSettingFilterResponse,
+  type ReportSettingRetrieveParams,
+  type ReportSettingUpdateParams,
+  type ReportSettingListParams,
+  type ReportSettingFilterParams,
+} from './report-settings';
 export { Reporting } from './reporting/reporting';
 export { RoiRequests, type RoiRequestSendRequestParams } from './roi-requests';
 export {
@@ -200,96 +291,5 @@ export {
   type SourceTransactionLatestParams,
 } from './source-transactions';
 export { Status } from './status/status';
+export { TaxIDs, type TaxID, type TaxIDExchangeResponse } from './tax-ids';
 export { WebReports, type WebReportRunResponse, type WebReportRunParams } from './web-reports';
-export {
-  type Accounts,
-  type Account,
-  type AccountListResponse,
-  type AccountFilterResponse,
-  type AccountRetrieveParams,
-  type AccountUpdateParams,
-  type AccountListParams,
-  type AccountFilterParams,
-} from './accounts';
-export {
-  type AssetClassifications,
-  type AssetClassification,
-  type AssetClassificationCreateResponse,
-  type AssetClassificationRetrieveResponse,
-  type AssetClassificationUpdateResponse,
-  type AssetClassificationListResponse,
-  type AssetClassificationCreateManyResponse,
-  type AssetClassificationFilterResponse,
-  type AssetClassificationUpdateSingleResponse,
-  type AssetClassificationCreateParams,
-  type AssetClassificationRetrieveParams,
-  type AssetClassificationUpdateParams,
-  type AssetClassificationListParams,
-  type AssetClassificationDeleteParams,
-  type AssetClassificationCreateManyParams,
-  type AssetClassificationDeleteManyParams,
-  type AssetClassificationFilterParams,
-  type AssetClassificationUpdateSingleParams,
-} from './asset-classifications';
-export {
-  type Benchmarks,
-  type Benchmark,
-  type BenchmarkCreateResponse,
-  type BenchmarkRetrieveResponse,
-  type BenchmarkUpdateResponse,
-  type BenchmarkListResponse,
-  type BenchmarkCreateManyResponse,
-  type BenchmarkFilterResponse,
-  type BenchmarkCreateParams,
-  type BenchmarkRetrieveParams,
-  type BenchmarkUpdateParams,
-  type BenchmarkListParams,
-  type BenchmarkDeleteParams,
-  type BenchmarkCreateManyParams,
-  type BenchmarkDeleteManyParams,
-  type BenchmarkFilterParams,
-} from './benchmarks';
-export { type BillingReports, type BillingReport } from './billing-reports';
-export {
-  type ClassificationTags,
-  type ClassificationTag,
-  type ClassificationTagCreateResponse,
-  type ClassificationTagRetrieveResponse,
-  type ClassificationTagUpdateResponse,
-  type ClassificationTagListResponse,
-  type ClassificationTagCreateManyResponse,
-  type ClassificationTagFilterResponse,
-  type ClassificationTagCreateParams,
-  type ClassificationTagRetrieveParams,
-  type ClassificationTagUpdateParams,
-  type ClassificationTagListParams,
-  type ClassificationTagDeleteParams,
-  type ClassificationTagCreateManyParams,
-  type ClassificationTagDeleteManyParams,
-  type ClassificationTagFilterParams,
-} from './classification-tags';
-export {
-  type Jobs,
-  type Delete,
-  type JobRetrieveResponse,
-  type JobListResponse,
-  type JobClearResponse,
-  type JobFilterResponse,
-  type JobRetrieveParams,
-  type JobListParams,
-  type JobClearParams,
-  type JobFilterParams,
-} from './jobs';
-export {
-  type ReportSettings,
-  type ReportSetting,
-  type ReportSettingRetrieveResponse,
-  type ReportSettingUpdateResponse,
-  type ReportSettingListResponse,
-  type ReportSettingFilterResponse,
-  type ReportSettingRetrieveParams,
-  type ReportSettingUpdateParams,
-  type ReportSettingListParams,
-  type ReportSettingFilterParams,
-} from './report-settings';
-export { type TaxIDs, type TaxID, type TaxIDExchangeResponse } from './tax-ids';
