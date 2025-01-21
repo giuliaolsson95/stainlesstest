@@ -106,6 +106,17 @@ describe('instantiate client', () => {
     expect(response).toEqual({ url: 'http://localhost:5000/foo', custom: true });
   });
 
+  test('explicit global fetch', async () => {
+    // make sure the global fetch type is assignable to our Fetch type
+    const client = new Bridgefttest({
+      baseURL: 'http://localhost:5000/',
+      bearerToken: 'My Bearer Token',
+      username: 'My Username',
+      password: 'My Password',
+      fetch: defaultFetch,
+    });
+  });
+
   test('custom signal', async () => {
     const client = new Bridgefttest({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',

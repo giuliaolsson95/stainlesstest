@@ -36,8 +36,8 @@ describe('resource firms', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const responsePromise = client.org.firms.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.org.firms.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,48 +45,6 @@ describe('resource firms', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.org.firms.update({
-      path_id: 1,
-      body_id: 0,
-      accent_color: 'accent_color',
-      billing_include_accrued_income: true,
-      billing_partition_option: 'D',
-      brand_colors: ['string'],
-      cp_enabled: true,
-      cp_heldaways_enabled: true,
-      cp_invoices_enabled: true,
-      cp_printable_reports_enabled: true,
-      cp_shared_files_enabled: true,
-      cp_web_reports_enabled: true,
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      disclosures: 'disclosures',
-      invoice_annualized_effective_rates: true,
-      invoice_due_date_option: '30',
-      invoice_effective_rates: true,
-      invoice_footer: 'invoice_footer',
-      invoice_from: 'invoice_from',
-      invoice_header: 'invoice_header',
-      invoice_include_fee_structures: true,
-      invoice_not_a_bill_explanation: true,
-      invoice_show_agreement: true,
-      is_active: true,
-      is_billing_active: true,
-      logo_url: 'logo_url',
-      name: 'name',
-      parent_firm_id: 0,
-      permissions: ['string'],
-      primary_color: 'primary_color',
-      relationship_code: 'relationship_code',
-      report_on_heldaway_accounts: true,
-      reporting_frequency: 'D',
-      short_name: 'short_name',
-      show_bridge_logo: true,
-      show_firm_logo: true,
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 
   test('list', async () => {

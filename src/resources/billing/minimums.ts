@@ -43,9 +43,12 @@ export class Minimums extends APIResource {
    * - `value`
    * - `value_type`
    */
-  update(params: MinimumUpdateParams, options?: Core.RequestOptions): Core.APIPromise<MinimumUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/billing/minimums/${path_id}`, { body: { id: body_id, ...body }, ...options });
+  update(
+    id: number,
+    body: MinimumUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<MinimumUpdateResponse> {
+    return this._client.put(`/billing/minimums/${id}`, { body, ...options });
   }
 
   /**
@@ -333,42 +336,37 @@ export namespace MinimumRetrieveParams {
 
 export interface MinimumUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * The unique resource ID for this Billing Minimum
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: The unique resource ID for this Billing Minimum
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: The firm ID of the managing firm
+   * The firm ID of the managing firm
    */
   firm_id?: number;
 
   /**
-   * Body param: The name of this Billing Minimum
+   * The name of this Billing Minimum
    */
   name?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 
   /**
-   * Body param: The value of this Billing Minimum
+   * The value of this Billing Minimum
    */
   value?: number;
 
   /**
-   * Body param: F for flat amount, P for percentage
+   * F for flat amount, P for percentage
    */
   value_type?: 'F' | 'P';
 }

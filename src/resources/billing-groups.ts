@@ -49,11 +49,11 @@ export class BillingGroups extends APIResource {
    * - `assignments`
    */
   update(
-    params: BillingGroupUpdateParams,
+    id: number,
+    body: BillingGroupUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingGroupUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/billing/groups/${path_id}`, { body: { id: body_id, ...body }, ...options });
+    return this._client.put(`/billing/groups/${id}`, { body, ...options });
   }
 
   /**
@@ -985,53 +985,47 @@ export namespace BillingGroupRetrieveParams {
 
 export interface BillingGroupUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * The unique resource ID for this Billing Group
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: The unique resource ID for this Billing Group
-   */
-  body_id?: number;
-
-  /**
-   * Body param: A list of AccountGroupAssignment objects associated with this
-   * Billing Group
+   * A list of AccountGroupAssignment objects associated with this Billing Group
    */
   assignments?: BillingGroupUpdateParams.Assignments;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: The firm ID of the managing firm for this Billing Group
+   * The firm ID of the managing firm for this Billing Group
    */
   firm_id?: number;
 
   /**
-   * Body param: The ID of the associated household for this Billing Group
+   * The ID of the associated household for this Billing Group
    */
   household_id?: number;
 
   /**
-   * Body param: A list of billing minimum ID's associated with this Billing Group
+   * A list of billing minimum ID's associated with this Billing Group
    */
   minimum_ids?: Array<number>;
 
   /**
-   * Body param: The name of this Billing Group
+   * The name of this Billing Group
    */
   name?: string;
 
   /**
-   * Body param: The sluggified name of this Billing Group
+   * The sluggified name of this Billing Group
    */
   slug?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

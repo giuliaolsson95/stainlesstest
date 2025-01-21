@@ -45,14 +45,11 @@ export class ClassificationTags extends APIResource {
    * - `name`
    */
   update(
-    params: ClassificationTagUpdateParams,
+    id: number,
+    body: ClassificationTagUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ClassificationTagUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/reporting/class-tags/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/reporting/class-tags/${id}`, { body, ...options });
   }
 
   /**
@@ -344,37 +341,32 @@ export namespace ClassificationTagRetrieveParams {
 
 export interface ClassificationTagUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this class tag object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this class tag object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: Created timestamp in UTC
+   * Created timestamp in UTC
    */
   created_dt_utc?: string;
 
   /**
-   * Body param: ID of the owning firm
+   * ID of the owning firm
    */
   firm_id?: number;
 
   /**
-   * Body param: Class tag name
+   * Class tag name
    */
   name?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

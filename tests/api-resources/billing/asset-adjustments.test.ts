@@ -51,8 +51,8 @@ describe('resource assetAdjustments', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const responsePromise = client.billing.assetAdjustments.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.billing.assetAdjustments.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,22 +60,6 @@ describe('resource assetAdjustments', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.billing.assetAdjustments.update({
-      path_id: 1,
-      body_id: 0,
-      adjustment_type: 'i',
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      firm_id: 0,
-      level: 'f',
-      name: 'name',
-      security_ids: [0],
-      slug: 'slug',
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-      weight: 0,
-    });
   });
 
   test('list', async () => {

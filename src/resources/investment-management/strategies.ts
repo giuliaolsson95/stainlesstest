@@ -51,14 +51,11 @@ export class Strategies extends APIResource {
    * - `security_allocations`
    */
   update(
-    params: StrategyUpdateParams,
+    id: number,
+    body: StrategyUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<StrategyUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/investment-management/strategies/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/investment-management/strategies/${id}`, { body, ...options });
   }
 
   /**
@@ -327,104 +324,99 @@ export namespace StrategyRetrieveParams {
 
 export interface StrategyUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this strategy object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this strategy object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Asset type of the strategy
+   * Asset type of the strategy
    */
   asset_type?: string;
 
   /**
-   * Body param: Id of the benchmark associated with this strategy
+   * Id of the benchmark associated with this strategy
    */
   benchmark_id?: number;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: Description of the strategy
+   * Description of the strategy
    */
   description?: string;
 
   /**
-   * Body param: Is environmental, social, governance?
+   * Is environmental, social, governance?
    */
   esg?: boolean;
 
   /**
-   * Body param: Identifier for etc action
+   * Identifier for etc action
    */
   etf_action_identifier?: string;
 
   /**
-   * Body param: Is the fact sheet available?
+   * Is the fact sheet available?
    */
   fact_sheet_available?: boolean;
 
   /**
-   * Body param: Fee reported on the strategy
+   * Fee reported on the strategy
    */
   fee?: number;
 
   /**
-   * Body param: Id of the firm this strategy is associated with
+   * Id of the firm this strategy is associated with
    */
   firm_id?: number;
 
   /**
-   * Body param: Investment minimum
+   * Investment minimum
    */
   investment_minimum?: number;
 
   /**
-   * Body param: Name for the strategy
+   * Name for the strategy
    */
   name?: string;
 
   /**
-   * Body param: Provider of the strategy
+   * Provider of the strategy
    */
   provider?: string;
 
   /**
-   * Body param: Risk category of the strategy. CP for Capital Preservation, CO for
-   * Conservative, MC for Moderate Conservative, MO for Moderate, MG for Moderate
-   * Growth, GR for Growth, AG for Aggressive Growth
+   * Risk category of the strategy. CP for Capital Preservation, CO for Conservative,
+   * MC for Moderate Conservative, MO for Moderate, MG for Moderate Growth, GR for
+   * Growth, AG for Aggressive Growth
    */
   risk_category?: 'CP' | 'CO' | 'MC' | 'MO' | 'MG' | 'GR' | 'AG';
 
   /**
-   * Body param: Search tags for the strategy
+   * Search tags for the strategy
    */
   search_tags?: Array<string>;
 
   /**
-   * Body param: Security allocation associated with this model
+   * Security allocation associated with this model
    */
   security_allocations?: Array<StrategyUpdateParams.SecurityAllocation>;
 
   /**
-   * Body param: Type of the strategy.
+   * Type of the strategy.
    */
   strategy_type?: 'Core' | 'Satellite' | 'Income' | 'Alternatives';
 
   /**
-   * Body param: Is the tax managed?
+   * Is the tax managed?
    */
   tax_managed?: boolean;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

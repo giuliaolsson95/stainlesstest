@@ -51,8 +51,8 @@ describe('resource billingGroups', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const responsePromise = client.billingGroups.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.billingGroups.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,21 +60,6 @@ describe('resource billingGroups', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.billingGroups.update({
-      path_id: 1,
-      body_id: 0,
-      assignments: { id: 0, account_id: 0, fee_location: 0, fee_location_option: 'S', group_id: 0 },
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      firm_id: 0,
-      household_id: 0,
-      minimum_ids: [0],
-      name: 'name',
-      slug: 'slug',
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 
   test('list', async () => {
