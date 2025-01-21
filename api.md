@@ -20,7 +20,7 @@ Types:
 Methods:
 
 - <code title="get /account-management/accounts/{id}">client.accounts.<a href="./src/resources/accounts.ts">retrieve</a>(id, { ...params }) -> Account</code>
-- <code title="put /account-management/accounts/{id}">client.accounts.<a href="./src/resources/accounts.ts">update</a>({ ...params }) -> Account</code>
+- <code title="put /account-management/accounts/{id}">client.accounts.<a href="./src/resources/accounts.ts">update</a>(id, { ...params }) -> Account</code>
 - <code title="get /account-management/accounts">client.accounts.<a href="./src/resources/accounts.ts">list</a>({ ...params }) -> AccountListResponse</code>
 - <code title="post /account-management/accounts/filter">client.accounts.<a href="./src/resources/accounts.ts">filter</a>({ ...params }) -> AccountFilterResponse</code>
 
@@ -88,7 +88,7 @@ Types:
 Methods:
 
 - <code title="get /org/firms/{id}">client.org.firms.<a href="./src/resources/org/firms.ts">retrieve</a>(id, { ...params }) -> FirmRetrieveResponse</code>
-- <code title="put /org/firms/{id}">client.org.firms.<a href="./src/resources/org/firms.ts">update</a>({ ...params }) -> FirmUpdateResponse</code>
+- <code title="put /org/firms/{id}">client.org.firms.<a href="./src/resources/org/firms.ts">update</a>(id, { ...params }) -> FirmUpdateResponse</code>
 - <code title="get /org/firms">client.org.firms.<a href="./src/resources/org/firms.ts">list</a>({ ...params }) -> FirmListResponse</code>
 - <code title="post /org/firms/filter">client.org.firms.<a href="./src/resources/org/firms.ts">filter</a>({ ...params }) -> FirmFilterResponse</code>
 
@@ -145,7 +145,7 @@ Methods:
 
 - <code title="post /billing/groups">client.billingGroups.<a href="./src/resources/billing-groups.ts">create</a>({ ...params }) -> BillingGroupCreateResponse</code>
 - <code title="get /billing/groups/{id}">client.billingGroups.<a href="./src/resources/billing-groups.ts">retrieve</a>(id, { ...params }) -> BillingGroupRetrieveResponse</code>
-- <code title="put /billing/groups/{id}">client.billingGroups.<a href="./src/resources/billing-groups.ts">update</a>({ ...params }) -> BillingGroupUpdateResponse</code>
+- <code title="put /billing/groups/{id}">client.billingGroups.<a href="./src/resources/billing-groups.ts">update</a>(id, { ...params }) -> BillingGroupUpdateResponse</code>
 - <code title="get /billing/groups">client.billingGroups.<a href="./src/resources/billing-groups.ts">list</a>({ ...params }) -> BillingGroupListResponse</code>
 - <code title="delete /billing/groups/{id}">client.billingGroups.<a href="./src/resources/billing-groups.ts">delete</a>(id, { ...params }) -> Delete</code>
 - <code title="post /billing/groups/create-from-households">client.billingGroups.<a href="./src/resources/billing-groups.ts">createFromHouseholds</a>({ ...params }) -> BillingGroupCreateFromHouseholdsResponse</code>
@@ -171,7 +171,7 @@ Methods:
 
 - <code title="post /billing/asset-adjustments">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">create</a>({ ...params }) -> AssetAdjustmentCreateResponse</code>
 - <code title="get /billing/asset-adjustments/{id}">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">retrieve</a>(id, { ...params }) -> AssetAdjustmentRetrieveResponse</code>
-- <code title="put /billing/asset-adjustments/{id}">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">update</a>({ ...params }) -> AssetAdjustmentUpdateResponse</code>
+- <code title="put /billing/asset-adjustments/{id}">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">update</a>(id, { ...params }) -> AssetAdjustmentUpdateResponse</code>
 - <code title="get /billing/asset-adjustments">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">list</a>({ ...params }) -> AssetAdjustmentListResponse</code>
 - <code title="delete /billing/asset-adjustments/{id}">client.billing.assetAdjustments.<a href="./src/resources/billing/asset-adjustments.ts">delete</a>(id, { ...params }) -> void</code>
 
@@ -220,7 +220,7 @@ Methods:
 
 - <code title="post /billing/minimums">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">create</a>({ ...params }) -> MinimumCreateResponse</code>
 - <code title="get /billing/minimums/{id}">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">retrieve</a>(id, { ...params }) -> MinimumRetrieveResponse</code>
-- <code title="put /billing/minimums/{id}">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">update</a>({ ...params }) -> MinimumUpdateResponse</code>
+- <code title="put /billing/minimums/{id}">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">update</a>(id, { ...params }) -> MinimumUpdateResponse</code>
 - <code title="get /billing/minimums">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">list</a>({ ...params }) -> MinimumListResponse</code>
 - <code title="delete /billing/minimums/{id}">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /billing/minimums/create-many">client.billing.minimums.<a href="./src/resources/billing/minimums.ts">createMany</a>([ ...body ]) -> MinimumCreateManyResponse</code>
@@ -307,7 +307,7 @@ Types:
 Methods:
 
 - <code title="get /billing/fee-structures/{id}">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">retrieve</a>(id, { ...params }) -> BillingFeeStructureRetrieveResponse</code>
-- <code title="put /billing/fee-structures/{id}">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">update</a>({ ...params }) -> BillingFeeStructureUpdateResponse</code>
+- <code title="put /billing/fee-structures/{id}">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">update</a>(id, { ...params }) -> BillingFeeStructureUpdateResponse</code>
 - <code title="delete /billing/fee-structures/{id}">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /billing/fee-structures/create-many">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">createMany</a>([ ...body ]) -> BillingFeeStructureCreateManyResponse</code>
 - <code title="post /billing/fee-structures/delete-many">client.billingFeeStructures.<a href="./src/resources/billing-fee-structures.ts">deleteMany</a>({ ...params }) -> void</code>
@@ -340,7 +340,7 @@ Types:
 
 Methods:
 
-- <code title="put /billing/splits/{id}">client.billingSplits.<a href="./src/resources/billing-splits.ts">update</a>({ ...params }) -> BillingSplitUpdateResponse</code>
+- <code title="put /billing/splits/{id}">client.billingSplits.<a href="./src/resources/billing-splits.ts">update</a>(id, { ...params }) -> BillingSplitUpdateResponse</code>
 - <code title="delete /billing/splits/{id}">client.billingSplits.<a href="./src/resources/billing-splits.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /billing/splits/create-many">client.billingSplits.<a href="./src/resources/billing-splits.ts">createMany</a>([ ...body ]) -> BillingSplitCreateManyResponse</code>
 - <code title="post /billing/splits/delete-many">client.billingSplits.<a href="./src/resources/billing-splits.ts">deleteMany</a>({ ...params }) -> void</code>
@@ -363,7 +363,7 @@ Methods:
 
 - <code title="post /reporting/households">client.reporting.households.<a href="./src/resources/reporting/households.ts">create</a>({ ...params }) -> HouseholdCreateResponse</code>
 - <code title="get /reporting/households/{id}">client.reporting.households.<a href="./src/resources/reporting/households.ts">retrieve</a>(id, { ...params }) -> HouseholdRetrieveResponse</code>
-- <code title="put /reporting/households/{id}">client.reporting.households.<a href="./src/resources/reporting/households.ts">update</a>({ ...params }) -> HouseholdUpdateResponse</code>
+- <code title="put /reporting/households/{id}">client.reporting.households.<a href="./src/resources/reporting/households.ts">update</a>(id, { ...params }) -> HouseholdUpdateResponse</code>
 - <code title="get /reporting/households">client.reporting.households.<a href="./src/resources/reporting/households.ts">list</a>({ ...params }) -> HouseholdListResponse</code>
 
 ## TargetAllocations
@@ -383,7 +383,7 @@ Methods:
 
 - <code title="post /reporting/target-allocations">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">create</a>({ ...params }) -> TargetAllocationCreateResponse</code>
 - <code title="get /reporting/target-allocations/{id}">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">retrieve</a>(id, { ...params }) -> TargetAllocationRetrieveResponse</code>
-- <code title="put /reporting/target-allocations/{id}">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">update</a>({ ...params }) -> TargetAllocationUpdateResponse</code>
+- <code title="put /reporting/target-allocations/{id}">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">update</a>(id, { ...params }) -> TargetAllocationUpdateResponse</code>
 - <code title="get /reporting/target-allocations">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">list</a>({ ...params }) -> TargetAllocationListResponse</code>
 - <code title="delete /reporting/target-allocations/{id}">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /reporting/target-allocations/create-many">client.reporting.targetAllocations.<a href="./src/resources/reporting/target-allocations.ts">createMany</a>([ ...body ]) -> TargetAllocationCreateManyResponse</code>
@@ -441,7 +441,7 @@ Methods:
 - <code title="post /reporting/asset-classifications/create-many">client.assetClassifications.<a href="./src/resources/asset-classifications.ts">createMany</a>([ ...body ]) -> AssetClassificationCreateManyResponse</code>
 - <code title="post /reporting/asset-classifications/delete-many">client.assetClassifications.<a href="./src/resources/asset-classifications.ts">deleteMany</a>({ ...params }) -> void</code>
 - <code title="post /reporting/asset-classifications/filter">client.assetClassifications.<a href="./src/resources/asset-classifications.ts">filter</a>({ ...params }) -> AssetClassificationFilterResponse</code>
-- <code title="put /reporting/asset-classifications/{id}">client.assetClassifications.<a href="./src/resources/asset-classifications.ts">updateSingle</a>({ ...params }) -> AssetClassificationUpdateSingleResponse</code>
+- <code title="put /reporting/asset-classifications/{id}">client.assetClassifications.<a href="./src/resources/asset-classifications.ts">updateSingle</a>(id, { ...params }) -> AssetClassificationUpdateSingleResponse</code>
 
 # ClassificationTags
 
@@ -460,7 +460,7 @@ Methods:
 
 - <code title="post /reporting/class-tags">client.classificationTags.<a href="./src/resources/classification-tags.ts">create</a>({ ...params }) -> ClassificationTagCreateResponse</code>
 - <code title="get /reporting/class-tags/{id}">client.classificationTags.<a href="./src/resources/classification-tags.ts">retrieve</a>(id, { ...params }) -> ClassificationTagRetrieveResponse</code>
-- <code title="put /reporting/class-tags/{id}">client.classificationTags.<a href="./src/resources/classification-tags.ts">update</a>({ ...params }) -> ClassificationTagUpdateResponse</code>
+- <code title="put /reporting/class-tags/{id}">client.classificationTags.<a href="./src/resources/classification-tags.ts">update</a>(id, { ...params }) -> ClassificationTagUpdateResponse</code>
 - <code title="get /reporting/class-tags">client.classificationTags.<a href="./src/resources/classification-tags.ts">list</a>({ ...params }) -> ClassificationTagListResponse</code>
 - <code title="delete /reporting/class-tags/{id}">client.classificationTags.<a href="./src/resources/classification-tags.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /reporting/class-tags/create-many">client.classificationTags.<a href="./src/resources/classification-tags.ts">createMany</a>([ ...body ]) -> ClassificationTagCreateManyResponse</code>
@@ -484,7 +484,7 @@ Methods:
 
 - <code title="post /reporting/benchmarks">client.benchmarks.<a href="./src/resources/benchmarks.ts">create</a>({ ...params }) -> BenchmarkCreateResponse</code>
 - <code title="get /reporting/benchmarks/{id}">client.benchmarks.<a href="./src/resources/benchmarks.ts">retrieve</a>(id, { ...params }) -> BenchmarkRetrieveResponse</code>
-- <code title="put /reporting/benchmarks/{id}">client.benchmarks.<a href="./src/resources/benchmarks.ts">update</a>({ ...params }) -> BenchmarkUpdateResponse</code>
+- <code title="put /reporting/benchmarks/{id}">client.benchmarks.<a href="./src/resources/benchmarks.ts">update</a>(id, { ...params }) -> BenchmarkUpdateResponse</code>
 - <code title="get /reporting/benchmarks">client.benchmarks.<a href="./src/resources/benchmarks.ts">list</a>({ ...params }) -> BenchmarkListResponse</code>
 - <code title="delete /reporting/benchmarks/{id}">client.benchmarks.<a href="./src/resources/benchmarks.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /reporting/benchmarks/create-many">client.benchmarks.<a href="./src/resources/benchmarks.ts">createMany</a>([ ...body ]) -> BenchmarkCreateManyResponse</code>
@@ -795,7 +795,7 @@ Methods:
 
 - <code title="post /investment-management/models">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">create</a>({ ...params }) -> ModelCreateResponse</code>
 - <code title="get /investment-management/models/{id}">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">retrieve</a>(id, { ...params }) -> ModelRetrieveResponse</code>
-- <code title="put /investment-management/models/{id}">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">update</a>({ ...params }) -> ModelUpdateResponse</code>
+- <code title="put /investment-management/models/{id}">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">update</a>(id, { ...params }) -> ModelUpdateResponse</code>
 - <code title="get /investment-management/models">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">list</a>({ ...params }) -> ModelListResponse</code>
 - <code title="delete /investment-management/models/{id}">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /investment-management/models/delete-many">client.investmentManagement.models.<a href="./src/resources/investment-management/models.ts">deleteMany</a>({ ...params }) -> void</code>
@@ -816,7 +816,7 @@ Methods:
 
 - <code title="post /investment-management/strategies">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">create</a>({ ...params }) -> StrategyCreateResponse</code>
 - <code title="get /investment-management/strategies/{id}">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">retrieve</a>(id, { ...params }) -> StrategyRetrieveResponse</code>
-- <code title="put /investment-management/strategies/{id}">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">update</a>({ ...params }) -> StrategyUpdateResponse</code>
+- <code title="put /investment-management/strategies/{id}">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">update</a>(id, { ...params }) -> StrategyUpdateResponse</code>
 - <code title="get /investment-management/strategies">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">list</a>({ ...params }) -> StrategyListResponse</code>
 - <code title="delete /investment-management/strategies/{id}">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">delete</a>(id, { ...params }) -> void</code>
 - <code title="post /investment-management/strategies/create-many">client.investmentManagement.strategies.<a href="./src/resources/investment-management/strategies.ts">createMany</a>([ ...body ]) -> StrategyCreateManyResponse</code>

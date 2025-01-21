@@ -51,8 +51,8 @@ describe('resource targetAllocations', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const responsePromise = client.reporting.targetAllocations.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.reporting.targetAllocations.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,21 +60,6 @@ describe('resource targetAllocations', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.reporting.targetAllocations.update({
-      path_id: 1,
-      body_id: 0,
-      coefficients: [
-        { id: 0, class_tag_id: 0, mac: 0, negative_tolerance: 0, positive_tolerance: 0, weight: 0 },
-      ],
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      firm_id: 0,
-      name: 0,
-      slug: 'slug',
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 
   test('list', async () => {

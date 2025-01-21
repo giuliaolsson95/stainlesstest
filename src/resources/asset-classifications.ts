@@ -163,14 +163,11 @@ export class AssetClassifications extends APIResource {
    * - `class_tag_id`
    */
   updateSingle(
-    params: AssetClassificationUpdateSingleParams,
+    id: number,
+    body: AssetClassificationUpdateSingleParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<AssetClassificationUpdateSingleResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/reporting/asset-classifications/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/reporting/asset-classifications/${id}`, { body, ...options });
   }
 }
 
@@ -560,42 +557,37 @@ export namespace AssetClassificationFilterParams {
 
 export interface AssetClassificationUpdateSingleParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this asset classification object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this asset classification object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: ID of the class tag for the classification
+   * ID of the class tag for the classification
    */
   class_tag_id?: number;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: ID of the user that created the classification
+   * ID of the user that created the classification
    */
   created_by_user_id?: number;
 
   /**
-   * Body param: ID of the owning firm
+   * ID of the owning firm
    */
   firm_id?: number;
 
   /**
-   * Body param: ID of the security being classified
+   * ID of the security being classified
    */
   security_id?: number;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }
