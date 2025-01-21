@@ -11,8 +11,8 @@ const client = new Bridgefttest({
 });
 
 describe('resource billingSplits', () => {
-  test('update: only required params', async () => {
-    const responsePromise = client.billingSplits.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.billingSplits.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,20 +20,6 @@ describe('resource billingSplits', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.billingSplits.update({
-      path_id: 1,
-      body_id: 0,
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      firm_id: 0,
-      name: 'name',
-      percentage: 0,
-      splitter_name: 'splitter_name',
-      splitter_slug: 'splitter_slug',
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 
   test('delete', async () => {

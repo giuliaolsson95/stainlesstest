@@ -17,11 +17,11 @@ export class BillingSplits extends APIResource {
    * - `splitter_name`
    */
   update(
-    params: BillingSplitUpdateParams,
+    id: number,
+    body: BillingSplitUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingSplitUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/billing/splits/${path_id}`, { body: { id: body_id, ...body }, ...options });
+    return this._client.put(`/billing/splits/${id}`, { body, ...options });
   }
 
   /**
@@ -145,47 +145,42 @@ export interface BillingSplitFilterResponse {
 
 export interface BillingSplitUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * The unique resource ID for the billing split
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: The unique resource ID for the billing split
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: The ID of the managing firm for this billing split
+   * The ID of the managing firm for this billing split
    */
   firm_id?: number;
 
   /**
-   * Body param: The name of the billing split, auto-generated if not supplied
+   * The name of the billing split, auto-generated if not supplied
    */
   name?: string;
 
   /**
-   * Body param: The percentage of the split stored on the natural scale
+   * The percentage of the split stored on the natural scale
    */
   percentage?: number;
 
   /**
-   * Body param: The name originally entered by the user
+   * The name originally entered by the user
    */
   splitter_name?: string;
 
   /**
-   * Body param: The sluggified version of the name field
+   * The sluggified version of the name field
    */
   splitter_slug?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

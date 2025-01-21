@@ -51,8 +51,8 @@ describe('resource strategies', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const responsePromise = client.investmentManagement.strategies.update({ path_id: 1 });
+  test('update', async () => {
+    const responsePromise = client.investmentManagement.strategies.update(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -60,31 +60,6 @@ describe('resource strategies', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('update: required and optional params', async () => {
-    const response = await client.investmentManagement.strategies.update({
-      path_id: 1,
-      body_id: 0,
-      asset_type: 'asset_type',
-      benchmark_id: 0,
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      description: 'description',
-      esg: true,
-      etf_action_identifier: 'etf_action_identifier',
-      fact_sheet_available: true,
-      fee: 0,
-      firm_id: 0,
-      investment_minimum: 0,
-      name: 'name',
-      provider: 'provider',
-      risk_category: 'CP',
-      search_tags: ['string'],
-      security_allocations: [{ id: 0, security_id: 0, strategy_id: 0, weight: 0 }],
-      strategy_type: 'Core',
-      tax_managed: true,
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 
   test('list', async () => {

@@ -46,14 +46,11 @@ export class Benchmarks extends APIResource {
    * - `coefficients`
    */
   update(
-    params: BenchmarkUpdateParams,
+    id: number,
+    body: BenchmarkUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BenchmarkUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/reporting/benchmarks/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/reporting/benchmarks/${id}`, { body, ...options });
   }
 
   /**
@@ -372,42 +369,37 @@ export namespace BenchmarkRetrieveParams {
 
 export interface BenchmarkUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this benchmark object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this benchmark object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Coefficients associated with this benchmark
+   * Coefficients associated with this benchmark
    */
   coefficients?: BenchmarkUpdateParams.Coefficients;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: ID of the owning firm
+   * ID of the owning firm
    */
   firm_id?: number;
 
   /**
-   * Body param: Benchmark name
+   * Benchmark name
    */
   name?: string;
 
   /**
-   * Body param: Slugified benchmark name
+   * Slugified benchmark name
    */
   slug?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

@@ -197,8 +197,8 @@ describe('resource assetClassifications', () => {
     ).rejects.toThrow(Bridgefttest.NotFoundError);
   });
 
-  test('updateSingle: only required params', async () => {
-    const responsePromise = client.assetClassifications.updateSingle({ path_id: 1 });
+  test('updateSingle', async () => {
+    const responsePromise = client.assetClassifications.updateSingle(1, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -206,18 +206,5 @@ describe('resource assetClassifications', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('updateSingle: required and optional params', async () => {
-    const response = await client.assetClassifications.updateSingle({
-      path_id: 1,
-      body_id: 0,
-      class_tag_id: 0,
-      created_at_utc: '2019-12-27T18:11:19.117Z',
-      created_by_user_id: 0,
-      firm_id: 0,
-      security_id: 0,
-      updated_at_utc: '2019-12-27T18:11:19.117Z',
-    });
   });
 });
