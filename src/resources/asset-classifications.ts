@@ -163,11 +163,11 @@ export class AssetClassifications extends APIResource {
    * - `class_tag_id`
    */
   updateSingle(
-    id: number,
+    id1: number,
     body: AssetClassificationUpdateSingleParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<AssetClassificationUpdateSingleResponse> {
-    return this._client.put(`/reporting/asset-classifications/${id}`, { body, ...options });
+    return this._client.put(`/reporting/asset-classifications/${id1}`, { body, ...options });
   }
 }
 

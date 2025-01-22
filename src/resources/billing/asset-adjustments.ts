@@ -49,11 +49,11 @@ export class AssetAdjustments extends APIResource {
    * - `weight`
    */
   update(
-    id: number,
+    id1: number,
     body: AssetAdjustmentUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<AssetAdjustmentUpdateResponse> {
-    return this._client.put(`/billing/asset-adjustments/${id}`, { body, ...options });
+    return this._client.put(`/billing/asset-adjustments/${id1}`, { body, ...options });
   }
 
   /**

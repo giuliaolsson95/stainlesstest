@@ -46,11 +46,11 @@ export class Households extends APIResource {
    * - `benchmarks_ids`
    */
   update(
-    id: number,
+    id1: number,
     body: HouseholdUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<HouseholdUpdateResponse> {
-    return this._client.put(`/reporting/households/${id}`, { body, ...options });
+    return this._client.put(`/reporting/households/${id1}`, { body, ...options });
   }
 
   /**
