@@ -17,11 +17,11 @@ export class BillingSplits extends APIResource {
    * - `splitter_name`
    */
   update(
-    id: number,
+    id1: number,
     body: BillingSplitUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingSplitUpdateResponse> {
-    return this._client.put(`/billing/splits/${id}`, { body, ...options });
+    return this._client.put(`/billing/splits/${id1}`, { body, ...options });
   }
 
   /**

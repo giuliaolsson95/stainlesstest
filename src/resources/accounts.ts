@@ -51,8 +51,8 @@ export class Accounts extends APIResource {
    * - `do_not_sell_securities_ids`
    * - `required_cash_frequency`
    */
-  update(id: number, body: AccountUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Account> {
-    return this._client.put(`/account-management/accounts/${id}`, { body, ...options });
+  update(id1: number, body: AccountUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Account> {
+    return this._client.put(`/account-management/accounts/${id1}`, { body, ...options });
   }
 
   /**

@@ -51,11 +51,11 @@ export class Strategies extends APIResource {
    * - `security_allocations`
    */
   update(
-    id: number,
+    id1: number,
     body: StrategyUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<StrategyUpdateResponse> {
-    return this._client.put(`/investment-management/strategies/${id}`, { body, ...options });
+    return this._client.put(`/investment-management/strategies/${id1}`, { body, ...options });
   }
 
   /**

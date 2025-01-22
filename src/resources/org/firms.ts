@@ -47,11 +47,11 @@ export class Firms extends APIResource {
    * - `billing_include_accrued_income`
    */
   update(
-    id: number,
+    id1: number,
     body: FirmUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FirmUpdateResponse> {
-    return this._client.put(`/org/firms/${id}`, { body, ...options });
+    return this._client.put(`/org/firms/${id1}`, { body, ...options });
   }
 
   /**

@@ -49,11 +49,11 @@ export class BillingGroups extends APIResource {
    * - `assignments`
    */
   update(
-    id: number,
+    id1: number,
     body: BillingGroupUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingGroupUpdateResponse> {
-    return this._client.put(`/billing/groups/${id}`, { body, ...options });
+    return this._client.put(`/billing/groups/${id1}`, { body, ...options });
   }
 
   /**
