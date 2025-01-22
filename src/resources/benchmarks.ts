@@ -46,11 +46,11 @@ export class Benchmarks extends APIResource {
    * - `coefficients`
    */
   update(
-    id: number,
+    id1: number,
     body: BenchmarkUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BenchmarkUpdateResponse> {
-    return this._client.put(`/reporting/benchmarks/${id}`, { body, ...options });
+    return this._client.put(`/reporting/benchmarks/${id1}`, { body, ...options });
   }
 
   /**

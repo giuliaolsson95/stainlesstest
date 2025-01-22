@@ -44,11 +44,11 @@ export class Minimums extends APIResource {
    * - `value_type`
    */
   update(
-    id: number,
+    id1: number,
     body: MinimumUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MinimumUpdateResponse> {
-    return this._client.put(`/billing/minimums/${id}`, { body, ...options });
+    return this._client.put(`/billing/minimums/${id1}`, { body, ...options });
   }
 
   /**

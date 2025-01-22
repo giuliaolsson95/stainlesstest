@@ -45,11 +45,11 @@ export class ClassificationTags extends APIResource {
    * - `name`
    */
   update(
-    id: number,
+    id1: number,
     body: ClassificationTagUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ClassificationTagUpdateResponse> {
-    return this._client.put(`/reporting/class-tags/${id}`, { body, ...options });
+    return this._client.put(`/reporting/class-tags/${id1}`, { body, ...options });
   }
 
   /**

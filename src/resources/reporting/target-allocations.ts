@@ -46,11 +46,11 @@ export class TargetAllocations extends APIResource {
    * - `coefficients`
    */
   update(
-    id: number,
+    id1: number,
     body: TargetAllocationUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<TargetAllocationUpdateResponse> {
-    return this._client.put(`/reporting/target-allocations/${id}`, { body, ...options });
+    return this._client.put(`/reporting/target-allocations/${id1}`, { body, ...options });
   }
 
   /**

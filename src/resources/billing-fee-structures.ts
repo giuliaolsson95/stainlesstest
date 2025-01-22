@@ -45,11 +45,11 @@ export class BillingFeeStructures extends APIResource {
    * - `tiers`
    */
   update(
-    id: number,
+    id1: number,
     body: BillingFeeStructureUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingFeeStructureUpdateResponse> {
-    return this._client.put(`/billing/fee-structures/${id}`, { body, ...options });
+    return this._client.put(`/billing/fee-structures/${id1}`, { body, ...options });
   }
 
   /**

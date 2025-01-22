@@ -43,11 +43,11 @@ export class Models extends APIResource {
    * - `strategy_allocations`
    */
   update(
-    id: number,
+    id1: number,
     body: ModelUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ModelUpdateResponse> {
-    return this._client.put(`/investment-management/models/${id}`, { body, ...options });
+    return this._client.put(`/investment-management/models/${id1}`, { body, ...options });
   }
 
   /**
