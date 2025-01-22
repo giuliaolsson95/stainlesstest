@@ -46,7 +46,7 @@ export interface PrintableReport {
   created_at_utc?: string;
 
   /**
-   * @deprecated: ID of the user that created the report
+   * @deprecated ID of the user that created the report
    */
   created_by_user_id?: number;
 

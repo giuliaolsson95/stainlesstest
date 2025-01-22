@@ -114,7 +114,7 @@ export interface Account {
   address_3?: string;
 
   /**
-   * @deprecated: [Deprecated] Please refer to the `advisor_codes` field.
+   * @deprecated [Deprecated] Please refer to the `advisor_codes` field.
    * `advisor_code` will be removed in future versions.
    */
   advisor_code?: string;
@@ -145,7 +145,7 @@ export interface Account {
   city?: string;
 
   /**
-   * @deprecated: Date the account was closed, if applicable
+   * @deprecated Date the account was closed, if applicable
    */
   close_date?: string;
 
@@ -193,7 +193,7 @@ export interface Account {
   do_not_sell_securities_ids?: Array<number>;
 
   /**
-   * @deprecated: See Entity ID Prefixes
+   * @deprecated See Entity ID Prefixes
    */
   entity_id?: string;
 
@@ -218,12 +218,12 @@ export interface Account {
   first_cost_basis_date?: string;
 
   /**
-   * @deprecated: Date when the account was first funded
+   * @deprecated Date when the account was first funded
    */
   first_funded_date?: string;
 
   /**
-   * @deprecated: Date when the account was first papered
+   * @deprecated Date when the account was first papered
    */
   first_papered_date?: string;
 
@@ -238,7 +238,7 @@ export interface Account {
   first_positions_date?: string;
 
   /**
-   * @deprecated: Earliest date at which this account was quarantined for data
+   * @deprecated Earliest date at which this account was quarantined for data
    * reconciliation, or null if it's not currently quarantined
    */
   first_quarantine_date?: string;
@@ -274,12 +274,12 @@ export interface Account {
   is_account?: boolean;
 
   /**
-   * @deprecated: Is this an active account?
+   * @deprecated Is this an active account?
    */
   is_active?: boolean;
 
   /**
-   * @deprecated: Is this a closed account?
+   * @deprecated Is this a closed account?
    */
   is_closed?: boolean;
 
@@ -383,7 +383,7 @@ export interface Account {
   sell_securities_ids?: Array<number>;
 
   /**
-   * @deprecated: The account short name or "SNAM"
+   * @deprecated The account short name or "SNAM"
    */
   short_name?: string;
 

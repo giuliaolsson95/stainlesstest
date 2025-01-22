@@ -142,12 +142,12 @@ export interface Household {
   opening_date?: string;
 
   /**
-   * @deprecated: Short name for the household object
+   * @deprecated Short name for the household object
    */
   short_name?: string;
 
   /**
-   * @deprecated: See Account and Household Status Codes.
+   * @deprecated See Account and Household Status Codes.
    */
   status?: string;
 

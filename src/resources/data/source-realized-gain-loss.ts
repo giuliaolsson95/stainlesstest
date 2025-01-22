@@ -91,7 +91,7 @@ export interface Sourcerealizedgainloss {
   open_date?: string;
 
   /**
-   * @deprecated: The raw data exactly as reported by the source with original field
+   * @deprecated The raw data exactly as reported by the source with original field
    * names
    */
   original_data?: unknown;
