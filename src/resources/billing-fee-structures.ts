@@ -45,14 +45,11 @@ export class BillingFeeStructures extends APIResource {
    * - `tiers`
    */
   update(
-    params: BillingFeeStructureUpdateParams,
+    id1: number,
+    body: BillingFeeStructureUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BillingFeeStructureUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/billing/fee-structures/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/billing/fee-structures/${id1}`, { body, ...options });
   }
 
   /**
@@ -223,87 +220,81 @@ export namespace BillingFeeStructureRetrieveParams {
 
 export interface BillingFeeStructureUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * The unique resource ID for this Fee Structure
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: The unique resource ID for this Fee Structure
-   */
-  body_id?: number;
-
-  /**
-   * Body param: E for end of period balance, A for average daily balance, P for
-   * ending period balance w/ adjustment for flows, C for ending period balance
-   * w/adjustment for flows less cash
+   * E for end of period balance, A for average daily balance, P for ending period
+   * balance w/ adjustment for flows, C for ending period balance w/adjustment for
+   * flows less cash
    */
   balance_type?: 'E' | 'A' | 'P' | 'C';
 
   /**
-   * Body param: See Billing Calculation Types
+   * See Billing Calculation Types
    */
   calculation_type?: string;
 
   /**
-   * Body param: R for Flat Rate, A for Flat Amount, G for Flat Group, D for Drop
-   * Through, T for Tiered Fee, and F for Free Fee
+   * R for Flat Rate, A for Flat Amount, G for Flat Group, D for Drop Through, T for
+   * Tiered Fee, and F for Free Fee
    */
   collection_type?: 'R' | 'A' | 'G' | 'D' | 'T' | 'F';
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: The user ID of the creator User
+   * The user ID of the creator User
    */
   created_by_user_id?: number;
 
   /**
-   * Body param: The firm ID of the managing firm
+   * The firm ID of the managing firm
    */
   firm_id?: number;
 
   /**
-   * Body param: The flat dollar fee for this Fee Structure
+   * The flat dollar fee for this Fee Structure
    */
   flat_dollar_fee?: number;
 
   /**
-   * Body param: The flat rate for this Fee Structure. Must be between 0 and 99
-   * inclusive. Will be stored and converted to a Percentage. (i.e. 1 -> 1% and 0.25
-   * -> 0.25%)
+   * The flat rate for this Fee Structure. Must be between 0 and 99 inclusive. Will
+   * be stored and converted to a Percentage. (i.e. 1 -> 1% and 0.25 -> 0.25%)
    */
   flat_rate?: number;
 
   /**
-   * Body param: See Frequency Codes
+   * See Frequency Codes
    */
   frequency?: 'M' | 'Q';
 
   /**
-   * Body param: The name of this Fee Structure
+   * The name of this Fee Structure
    */
   name?: string;
 
   /**
-   * Body param: See Billing Quarter Cycle Codes
+   * See Billing Quarter Cycle Codes
    */
   quarter_cycle?: number;
 
   /**
-   * Body param: The slugified name of this Fee Structure
+   * The slugified name of this Fee Structure
    */
   slug?: string;
 
   /**
-   * Body param: Tiers associated with the fee structure
+   * Tiers associated with the fee structure
    */
   tiers?: Array<BillingFeeStructureUpdateParams.Tier>;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

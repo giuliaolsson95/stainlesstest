@@ -49,14 +49,11 @@ export class AssetAdjustments extends APIResource {
    * - `weight`
    */
   update(
-    params: AssetAdjustmentUpdateParams,
+    id1: number,
+    body: AssetAdjustmentUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<AssetAdjustmentUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/billing/asset-adjustments/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/billing/asset-adjustments/${id1}`, { body, ...options });
   }
 
   /**
@@ -301,57 +298,52 @@ export namespace AssetAdjustmentRetrieveParams {
 
 export interface AssetAdjustmentUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * The unique resource ID for this Asset Adjustment
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: The unique resource ID for this Asset Adjustment
-   */
-  body_id?: number;
-
-  /**
-   * Body param: i for inclusion, e for exclusion
+   * i for inclusion, e for exclusion
    */
   adjustment_type?: 'i' | 'e';
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: The firm ID of the managing firm
+   * The firm ID of the managing firm
    */
   firm_id?: number;
 
   /**
-   * Body param: f for firm-wide, a for the account level
+   * f for firm-wide, a for the account level
    */
   level?: 'f' | 'a';
 
   /**
-   * Body param: The name of this Asset Adjustment
+   * The name of this Asset Adjustment
    */
   name?: string;
 
   /**
-   * Body param: List of security ids associated with this asset adjustment
+   * List of security ids associated with this asset adjustment
    */
   security_ids?: Array<number>;
 
   /**
-   * Body param: The sluggified name of this Asset Adjustment
+   * The sluggified name of this Asset Adjustment
    */
   slug?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 
   /**
-   * Body param: Weight of the adjusted asset
+   * Weight of the adjusted asset
    */
   weight?: number;
 }

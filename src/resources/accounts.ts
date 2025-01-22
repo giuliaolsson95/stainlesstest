@@ -51,12 +51,8 @@ export class Accounts extends APIResource {
    * - `do_not_sell_securities_ids`
    * - `required_cash_frequency`
    */
-  update(params: AccountUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Account> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/account-management/accounts/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+  update(id1: number, body: AccountUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Account> {
+    return this._client.put(`/account-management/accounts/${id1}`, { body, ...options });
   }
 
   /**
@@ -118,7 +114,7 @@ export interface Account {
   address_3?: string;
 
   /**
-   * @deprecated: [Deprecated] Please refer to the `advisor_codes` field.
+   * @deprecated [Deprecated] Please refer to the `advisor_codes` field.
    * `advisor_code` will be removed in future versions.
    */
   advisor_code?: string;
@@ -149,7 +145,7 @@ export interface Account {
   city?: string;
 
   /**
-   * @deprecated: Date the account was closed, if applicable
+   * @deprecated Date the account was closed, if applicable
    */
   close_date?: string;
 
@@ -197,7 +193,7 @@ export interface Account {
   do_not_sell_securities_ids?: Array<number>;
 
   /**
-   * @deprecated: See Entity ID Prefixes
+   * @deprecated See Entity ID Prefixes
    */
   entity_id?: string;
 
@@ -222,12 +218,12 @@ export interface Account {
   first_cost_basis_date?: string;
 
   /**
-   * @deprecated: Date when the account was first funded
+   * @deprecated Date when the account was first funded
    */
   first_funded_date?: string;
 
   /**
-   * @deprecated: Date when the account was first papered
+   * @deprecated Date when the account was first papered
    */
   first_papered_date?: string;
 
@@ -242,7 +238,7 @@ export interface Account {
   first_positions_date?: string;
 
   /**
-   * @deprecated: Earliest date at which this account was quarantined for data
+   * @deprecated Earliest date at which this account was quarantined for data
    * reconciliation, or null if it's not currently quarantined
    */
   first_quarantine_date?: string;
@@ -278,12 +274,12 @@ export interface Account {
   is_account?: boolean;
 
   /**
-   * @deprecated: Is this an active account?
+   * @deprecated Is this an active account?
    */
   is_active?: boolean;
 
   /**
-   * @deprecated: Is this a closed account?
+   * @deprecated Is this a closed account?
    */
   is_closed?: boolean;
 
@@ -387,7 +383,7 @@ export interface Account {
   sell_securities_ids?: Array<number>;
 
   /**
-   * @deprecated: The account short name or "SNAM"
+   * @deprecated The account short name or "SNAM"
    */
   short_name?: string;
 
@@ -488,351 +484,339 @@ export namespace AccountRetrieveParams {
 
 export interface AccountUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this account object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this account object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Type of account. Example, IRA Roth, 401k, etc.
+   * Type of account. Example, IRA Roth, 401k, etc.
    */
   acct_type?: string;
 
   /**
-   * Body param: First line address
+   * First line address
    */
   address_1?: string;
 
   /**
-   * Body param: Second line address
+   * Second line address
    */
   address_2?: string;
 
   /**
-   * Body param: Third line address
+   * Third line address
    */
   address_3?: string;
 
   /**
-   * Body param: [Deprecated] Please refer to the `advisor_codes` field.
-   * `advisor_code` will be removed in future versions.
+   * [Deprecated] Please refer to the `advisor_codes` field. `advisor_code` will be
+   * removed in future versions.
    */
   advisor_code?: string;
 
   /**
-   * Body param: The list of Advisor Codes that the account is associated with.
+   * The list of Advisor Codes that the account is associated with.
    */
   advisor_codes?: Array<string>;
 
   /**
-   * Body param: List of ids for benchmarks associated with the account
+   * List of ids for benchmarks associated with the account
    */
   benchmarks_ids?: Array<number>;
 
   /**
-   * Body param: List of ids of splits associated with this account
+   * List of ids of splits associated with this account
    */
   billing_splits_ids?: Array<number>;
 
   /**
-   * Body param: Securities specifically to buy
+   * Securities specifically to buy
    */
   buy_securities_ids?: Array<number>;
 
   /**
-   * Body param: City of the account-holder
+   * City of the account-holder
    */
   city?: string;
 
   /**
-   * Body param: Date the account was closed, if applicable
+   * Date the account was closed, if applicable
    */
   close_date?: string;
 
   /**
-   * Body param: Country of the account-holder
+   * Country of the account-holder
    */
   country?: string;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: Custodian the account data comes from. APX=Apex Fintech Solutions,
-   * DST=DST Systems, FPR=Fidelity 401k/403b, IBK=Interactive Brokers, NFS=Fidelity
+   * Custodian the account data comes from. APX=Apex Fintech Solutions, DST=DST
+   * Systems, FPR=Fidelity 401k/403b, IBK=Interactive Brokers, NFS=Fidelity
    * Investments, PER=Pershing, SWB=Charles Schwab, EGB=Eaglebrook, MLT=Millenium
    * Trust, TIA=TIAA Financial Services
    */
   custodian?: 'APX' | 'DST' | 'FPR' | 'IBK' | 'NFS' | 'PER' | 'SWB' | 'EGB' | 'MLT' | 'TIA';
 
   /**
-   * Body param: Full name of the custodian the account data comes from
+   * Full name of the custodian the account data comes from
    */
   custodian_name?: string;
 
   /**
-   * Body param: Display name of the account
+   * Display name of the account
    */
   display_name?: string;
 
   /**
-   * Body param: Display number of the account
+   * Display number of the account
    */
   display_number?: string;
 
   /**
-   * Body param: Securities specifically to not buy
+   * Securities specifically to not buy
    */
   do_not_buy_securities_ids?: Array<number>;
 
   /**
-   * Body param: Securities specifically to not sell
+   * Securities specifically to not sell
    */
   do_not_sell_securities_ids?: Array<number>;
 
   /**
-   * Body param: See Entity ID Prefixes
+   * See Entity ID Prefixes
    */
   entity_id?: string;
 
   /**
-   * Body param: List of ids of fee structures associated with this account
+   * List of ids of fee structures associated with this account
    */
   fee_structures_ids?: Array<number>;
 
   /**
-   * Body param: ID of the owning firm
+   * ID of the owning firm
    */
   firm_id?: number;
 
   /**
-   * Body param: The date at which this account begins accruing advisor fees
+   * The date at which this account begins accruing advisor fees
    */
   first_billable_date?: string;
 
   /**
-   * Body param: First date when cost basis information is known for this account
+   * First date when cost basis information is known for this account
    */
   first_cost_basis_date?: string;
 
   /**
-   * Body param: Date when the account was first funded
+   * Date when the account was first funded
    */
   first_funded_date?: string;
 
   /**
-   * Body param: Date when the account was first papered
+   * Date when the account was first papered
    */
   first_papered_date?: string;
 
   /**
-   * Body param: First performance date for this account
+   * First performance date for this account
    */
   first_performance_date?: string;
 
   /**
-   * Body param: First date when positions information is known for this account
+   * First date when positions information is known for this account
    */
   first_positions_date?: string;
 
   /**
-   * Body param: Earliest date at which this account was quarantined for data
-   * reconciliation, or null if it's not currently quarantined
+   * Earliest date at which this account was quarantined for data reconciliation, or
+   * null if it's not currently quarantined
    */
   first_quarantine_date?: string;
 
   /**
-   * Body param: First date when transaction information was recorded for this
-   * account
+   * First date when transaction information was recorded for this account
    */
   first_transactions_date?: string;
 
   /**
-   * Body param: Does this account have a custodian name?
+   * Does this account have a custodian name?
    */
   has_custodian_name?: boolean;
 
   /**
-   * Body param: Household Id this account belongs to
+   * Household Id this account belongs to
    */
   household_id?: number;
 
   /**
-   * Body param: Date of account inception, if applicable. May differ from opening
-   * date.
+   * Date of account inception, if applicable. May differ from opening date.
    */
   inception_date?: string;
 
   /**
-   * Body param: Investment model id associated with this account
+   * Investment model id associated with this account
    */
   investment_model_id?: number;
 
   /**
-   * Body param: Is this entity an account? (Yes)
+   * Is this entity an account? (Yes)
    */
   is_account?: boolean;
 
   /**
-   * Body param: Is this an active account?
+   * Is this an active account?
    */
   is_active?: boolean;
 
   /**
-   * Body param: Is this a closed account?
+   * Is this a closed account?
    */
   is_closed?: boolean;
 
   /**
-   * Body param: Is this account billed at the custodian level?
+   * Is this account billed at the custodian level?
    */
   is_custodian_billed?: boolean;
 
   /**
-   * Body param: Is this account directly billed?
+   * Is this account directly billed?
    */
   is_direct_billed?: boolean;
 
   /**
-   * Body param: Is this entity a household? (No)
+   * Is this entity a household? (No)
    */
   is_household?: boolean;
 
   /**
-   * Body param: Boolean that determines whether or not an account is a pledged
-   * account.
+   * Boolean that determines whether or not an account is a pledged account.
    */
   is_pledged_account?: boolean;
 
   /**
-   * Body param: True if this account is tax deferrable. This data is typically
-   * provided by the financial institution
+   * True if this account is tax deferrable. This data is typically provided by the
+   * financial institution
    */
   is_tax_deferred?: boolean;
 
   /**
-   * Body param: True if this account is taxable. This data is typically provided by
-   * the financial institution
+   * True if this account is taxable. This data is typically provided by the
+   * financial institution
    */
   is_taxable?: boolean;
 
   /**
-   * Body param: Most recent date when cost basis information is known for this
-   * account
+   * Most recent date when cost basis information is known for this account
    */
   last_cost_basis_date?: string;
 
   /**
-   * Body param: Date for the last portfolio data for this account object
+   * Date for the last portfolio data for this account object
    */
   last_portfolio_data_date?: string;
 
   /**
-   * Body param: Most recent date when positions information is known for this
-   * account
+   * Most recent date when positions information is known for this account
    */
   last_positions_date?: string;
 
   /**
-   * Body param: Lastest date when the reporting information was recorded for this
-   * account
+   * Lastest date when the reporting information was recorded for this account
    */
   last_reporting_date?: string;
 
   /**
-   * Body param: Latest date when transaction information was recorded for this
-   * account
+   * Latest date when transaction information was recorded for this account
    */
   last_transactions_date?: string;
 
   /**
-   * Body param: Populated from custodian data
+   * Populated from custodian data
    */
   name?: string;
 
   /**
-   * Body param: General notes on account entered by user
+   * General notes on account entered by user
    */
   notes?: string;
 
   /**
-   * Body param: Account number
+   * Account number
    */
   number?: string;
 
   /**
-   * Body param: C=billed at the custodian D=billed directly
+   * C=billed at the custodian D=billed directly
    */
   payment_source?: 'C' | 'D';
 
   /**
-   * Body param: Required cash amount in dollars to be set aside for withdrawals
+   * Required cash amount in dollars to be set aside for withdrawals
    */
   required_cash?: number;
 
   /**
-   * Body param: Required cash frequency for this account object. M for monthly, Q
-   * for quarterly, O for one time
+   * Required cash frequency for this account object. M for monthly, Q for quarterly,
+   * O for one time
    */
   required_cash_frequency?: '' | 'M' | 'Q' | 'O';
 
   /**
-   * Body param: List of restriction descriptions or restriction codes as provided by
-   * the custodian.
+   * List of restriction descriptions or restriction codes as provided by the
+   * custodian.
    */
   restrictions?: string;
 
   /**
-   * Body param: Securities specifically to sell
+   * Securities specifically to sell
    */
   sell_securities_ids?: Array<number>;
 
   /**
-   * Body param: The account short name or "SNAM"
+   * The account short name or "SNAM"
    */
   short_name?: string;
 
   /**
-   * Body param: State of the account-holder
+   * State of the account-holder
    */
   state?: string;
 
   /**
-   * Body param: Status of the account object. It can be funded, papered, closed or
-   * slate. Funded account is considered active account, Papered or Closed account is
-   * inactive, and Stale is unknown
+   * Status of the account object. It can be funded, papered, closed or slate. Funded
+   * account is considered active account, Papered or Closed account is inactive, and
+   * Stale is unknown
    */
   status?: 'funded' | 'papered' | 'closed' | 'stale';
 
   /**
-   * Body param: Target allocation id associated with this account
+   * Target allocation id associated with this account
    */
   target_allocation_id?: number;
 
   /**
-   * Body param: Tokenized representation of the account's owning tax ID.
+   * Tokenized representation of the account's owning tax ID.
    */
   tax_id_token?: string;
 
   /**
-   * Body param: Securities to be excluded in trading integrations (e.g. rebalancing
+   * Securities to be excluded in trading integrations (e.g. rebalancing
    * calculations)
    */
   unsupervised_securities_ids?: Array<number>;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 
   /**
-   * Body param: Zip code of the account-holder
+   * Zip code of the account-holder
    */
   zip_code?: string;
 }

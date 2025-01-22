@@ -58,6 +58,7 @@ export class BillingInvoices extends APIResource {
       query: { pager },
       body,
       ...options,
+      headers: { Accept: 'application/pdf', ...options?.headers },
       __binaryResponse: true,
     });
   }

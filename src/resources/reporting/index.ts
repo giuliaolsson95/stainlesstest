@@ -1,8 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Reporting } from './reporting';
 export {
-  type Households,
+  Households,
   type Household,
   type HouseholdCreateResponse,
   type HouseholdRetrieveResponse,
@@ -14,13 +13,14 @@ export {
   type HouseholdListParams,
 } from './households';
 export {
-  type PrintableReports,
+  PrintableReports,
   type PrintableReport,
   type PrintableReportListResponse,
   type PrintableReportListParams,
 } from './printable-reports';
+export { Reporting } from './reporting';
 export {
-  type TargetAllocations,
+  TargetAllocations,
   type TargetAllocation,
   type TargetAllocationCreateResponse,
   type TargetAllocationRetrieveResponse,

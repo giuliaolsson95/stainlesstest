@@ -42,12 +42,12 @@ export class Models extends APIResource {
    * - `name`
    * - `strategy_allocations`
    */
-  update(params: ModelUpdateParams, options?: Core.RequestOptions): Core.APIPromise<ModelUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/investment-management/models/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+  update(
+    id1: number,
+    body: ModelUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ModelUpdateResponse> {
+    return this._client.put(`/investment-management/models/${id1}`, { body, ...options });
   }
 
   /**
@@ -334,37 +334,32 @@ export namespace ModelRetrieveParams {
 
 export interface ModelUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique ID for this model object
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique ID for this model object
-   */
-  body_id?: number;
-
-  /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: Id of the firm this model is associated with
+   * Id of the firm this model is associated with
    */
   firm_id?: number;
 
   /**
-   * Body param: Name for the model
+   * Name for the model
    */
   name?: string;
 
   /**
-   * Body param: Strategy allocation associated with this model
+   * Strategy allocation associated with this model
    */
   strategy_allocations?: Array<ModelUpdateParams.StrategyAllocation>;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

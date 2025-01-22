@@ -46,14 +46,11 @@ export class Households extends APIResource {
    * - `benchmarks_ids`
    */
   update(
-    params: HouseholdUpdateParams,
+    id1: number,
+    body: HouseholdUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<HouseholdUpdateResponse> {
-    const { path_id, body_id, ...body } = params;
-    return this._client.put(`/reporting/households/${path_id}`, {
-      body: { id: body_id, ...body },
-      ...options,
-    });
+    return this._client.put(`/reporting/households/${id1}`, { body, ...options });
   }
 
   /**
@@ -145,12 +142,12 @@ export interface Household {
   opening_date?: string;
 
   /**
-   * @deprecated: Short name for the household object
+   * @deprecated Short name for the household object
    */
   short_name?: string;
 
   /**
-   * @deprecated: See Account and Household Status Codes.
+   * @deprecated See Account and Household Status Codes.
    */
   status?: string;
 
@@ -285,96 +282,88 @@ export namespace HouseholdRetrieveParams {
 
 export interface HouseholdUpdateParams {
   /**
-   * Path param: Unique ID for the object
+   * Unique household identifier
    */
-  path_id: number;
+  id?: number;
 
   /**
-   * Body param: Unique household identifier
-   */
-  body_id?: number;
-
-  /**
-   * Body param: List of ids for benchmarks associated with the household
+   * List of ids for benchmarks associated with the household
    */
   benchmarks_ids?: Array<number>;
 
   /**
-   * Body param: Date the household was closed, if applicable
+   * Date the household was closed, if applicable
    */
   close_date?: string;
 
   /**
-   * Body param: Timestamp for when the record was created
+   * Timestamp for when the record was created
    */
   created_at_utc?: string;
 
   /**
-   * Body param: See Entiti ID Prefixes
+   * See Entiti ID Prefixes
    */
   entity_id?: string;
 
   /**
-   * Body param: ID of the owning firm
+   * ID of the owning firm
    */
   firm_id?: number;
 
   /**
-   * Body param: Earliest date that portfolio data was processed among accounts in
-   * this household
+   * Earliest date that portfolio data was processed among accounts in this household
    */
   first_account_reporting_date?: string;
 
   /**
-   * Body param: Date of household inception, if applicable. May differ from opening
-   * date
+   * Date of household inception, if applicable. May differ from opening date
    */
   inception_date?: string;
 
   /**
-   * Body param: Is this entity an account? (No)
+   * Is this entity an account? (No)
    */
   is_account?: boolean;
 
   /**
-   * Body param: Is this entity a household? (Yes)
+   * Is this entity a household? (Yes)
    */
   is_household?: boolean;
 
   /**
-   * Body param: Most recent date that portfolio data was processed among accounts in
-   * this household
+   * Most recent date that portfolio data was processed among accounts in this
+   * household
    */
   last_account_reporting_date?: string;
 
   /**
-   * Body param: Most recent date that portfolio data was processed for this
-   * household
+   * Most recent date that portfolio data was processed for this household
    */
   last_reporting_date?: string;
 
   /**
-   * Body param: Populated from custodian data but can be modified by users
+   * Populated from custodian data but can be modified by users
    */
   name?: string;
 
   /**
-   * Body param: Date the household was opened
+   * Date the household was opened
    */
   opening_date?: string;
 
   /**
-   * Body param: Short name for the household object
+   * Short name for the household object
    */
   short_name?: string;
 
   /**
-   * Body param: See Account and Household Status Codes.
+   * See Account and Household Status Codes.
    */
   status?: string;
 
   /**
-   * Body param: Timestamp for when the record was updated
+   * Timestamp for when the record was updated
    */
   updated_at_utc?: string;
 }

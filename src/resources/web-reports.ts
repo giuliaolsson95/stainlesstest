@@ -418,22 +418,22 @@ export namespace WebReportRunResponse {
       /**
        * The equity appraisal table
        */
-      equity_appraisal?: unknown | null;
+      equity_appraisal?: unknown;
 
       /**
        * The fixed icome appraisal table
        */
-      fixed_income_appraisal?: unknown | null;
+      fixed_income_appraisal?: unknown;
 
       /**
        * The money market appraisal table
        */
-      money_market_appraisal?: unknown | null;
+      money_market_appraisal?: unknown;
 
       /**
        * The "other" appraisal table
        */
-      other_appraisal?: unknown | null;
+      other_appraisal?: unknown;
 
       /**
        * A boolean to indicate if the report entity has appraisal data
@@ -881,7 +881,7 @@ export namespace WebReportRunResponse {
             is_cancel?: boolean;
 
             /**
-             * @deprecated: Raw Meta Data passed through from the custodian
+             * @deprecated Raw Meta Data passed through from the custodian
              */
             meta_data?: unknown;
 
@@ -1422,7 +1422,7 @@ export namespace WebReportRunResponse {
             is_positive_cash_impact?: boolean;
 
             /**
-             * @deprecated: Raw Meta Data passed through from the custodian
+             * @deprecated Raw Meta Data passed through from the custodian
              */
             meta_data?: unknown;
 
@@ -1798,7 +1798,7 @@ export namespace WebReportRunResponse {
           is_cancel?: boolean;
 
           /**
-           * @deprecated: Raw Meta Data passed through from the custodian
+           * @deprecated Raw Meta Data passed through from the custodian
            */
           meta_data?: unknown;
 
@@ -2043,7 +2043,7 @@ export namespace WebReportRunResponse {
           is_cancel?: boolean;
 
           /**
-           * @deprecated: Raw Meta Data passed through from the custodian
+           * @deprecated Raw Meta Data passed through from the custodian
            */
           meta_data?: unknown;
 
@@ -2109,7 +2109,7 @@ export namespace WebReportRunResponse {
     }
 
     export interface Snapshot {
-      account_summary?: unknown | null;
+      account_summary?: unknown;
 
       allocations?: Array<Snapshot.Allocation>;
 
@@ -2117,7 +2117,7 @@ export namespace WebReportRunResponse {
 
       chart?: Snapshot.Chart;
 
-      'household-summary'?: unknown | null;
+      'household-summary'?: unknown;
 
       is_household?: boolean;
 

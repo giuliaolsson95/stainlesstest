@@ -65,6 +65,7 @@ export class FeeUploadFiles extends APIResource {
     return this._client.post(`/billing/fee-upload-files/download/${id}`, {
       query: { pager },
       ...options,
+      headers: { Accept: 'application/zip', ...options?.headers },
       __binaryResponse: true,
     });
   }
