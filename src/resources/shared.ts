@@ -30,7 +30,7 @@ export interface FeeStructure {
   created_at_utc?: string;
 
   /**
-   * @deprecated: The user ID of the creator User
+   * @deprecated The user ID of the creator User
    */
   created_by_user_id?: number;
 
@@ -139,14 +139,14 @@ export interface Job {
   current_step?: number;
 
   /**
-   * @deprecated: If true, this sends an email notification to the user who created
+   * @deprecated If true, this sends an email notification to the user who created
    * the job
    */
   email_notification?: string;
 
   /**
-   * @deprecated: The timestamp at which the email notification was sent. Only
-   * applies when email_notification is enabled
+   * @deprecated The timestamp at which the email notification was sent. Only applies
+   * when email_notification is enabled
    */
   email_notification_dt_utc?: string;
 

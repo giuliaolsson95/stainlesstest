@@ -175,7 +175,7 @@ export interface Sourcelot {
   lot_selection_method?: string;
 
   /**
-   * @deprecated: The raw data exactly as reported by the source with original field
+   * @deprecated The raw data exactly as reported by the source with original field
    * names
    */
   original_data?: unknown;
