@@ -168,7 +168,7 @@ export interface Sourceposition {
   open_units_with_cost_basis_st?: number;
 
   /**
-   * @deprecated: The raw data exactly as reported by the source with original field
+   * @deprecated The raw data exactly as reported by the source with original field
    * names
    */
   original_data?: unknown;

@@ -151,7 +151,7 @@ export interface Security {
   bond_rating?: string;
 
   /**
-   * @deprecated: The broad code of the Security
+   * @deprecated The broad code of the Security
    */
   broad_code?: string;
 

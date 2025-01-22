@@ -881,7 +881,7 @@ export namespace WebReportRunResponse {
             is_cancel?: boolean;
 
             /**
-             * @deprecated: Raw Meta Data passed through from the custodian
+             * @deprecated Raw Meta Data passed through from the custodian
              */
             meta_data?: unknown;
 
@@ -1422,7 +1422,7 @@ export namespace WebReportRunResponse {
             is_positive_cash_impact?: boolean;
 
             /**
-             * @deprecated: Raw Meta Data passed through from the custodian
+             * @deprecated Raw Meta Data passed through from the custodian
              */
             meta_data?: unknown;
 
@@ -1798,7 +1798,7 @@ export namespace WebReportRunResponse {
           is_cancel?: boolean;
 
           /**
-           * @deprecated: Raw Meta Data passed through from the custodian
+           * @deprecated Raw Meta Data passed through from the custodian
            */
           meta_data?: unknown;
 
@@ -2043,7 +2043,7 @@ export namespace WebReportRunResponse {
           is_cancel?: boolean;
 
           /**
-           * @deprecated: Raw Meta Data passed through from the custodian
+           * @deprecated Raw Meta Data passed through from the custodian
            */
           meta_data?: unknown;
 

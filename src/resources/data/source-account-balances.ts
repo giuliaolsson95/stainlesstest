@@ -102,7 +102,7 @@ export interface Sourceaccountbalance {
   net_non_performing_income?: number;
 
   /**
-   * @deprecated: The raw data exactly as reported by the source with original field
+   * @deprecated The raw data exactly as reported by the source with original field
    * names
    */
   original_data?: unknown;
